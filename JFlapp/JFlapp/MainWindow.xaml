@@ -1,0 +1,18 @@
+﻿<Window x:Class="JFlapp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JFlapp"
+        mc:Ignorable="d"
+        Title="JFLAP" Height="300" Width="300">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Finite Automaton" Click="CreateFiniteAutomaton" HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Width="200" Height="60" Grid.ColumnSpan="2"/>
+        <Button Content="Regular expressions" Click="CreateRegularExpressions" HorizontalAlignment="Left" Margin="50,157,0,0" VerticalAlignment="Top" Width="200" Height="60" Grid.ColumnSpan="2"/>
+    </Grid>
+    
+</Window>
