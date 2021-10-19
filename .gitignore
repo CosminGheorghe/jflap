@@ -1,3 +1,3 @@
-JFlapp/.vs/
-JFlapp/JFlapp/bin/
-JFlapp/JFlapp/obj/
+JFlapp/.vs/**
+JFlapp/JFlapp/bin/**
+JFlapp/JFlapp/obj/**
