@@ -3,17 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Markup;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using System.Xml;
-using System.Xml.Serialization;
 
 namespace JFlapp
 {
@@ -165,10 +161,12 @@ namespace JFlapp
 
         private void LoadJSON(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog theDialog = new OpenFileDialog();
-            theDialog.Title = "Open JSON File";
-            theDialog.Filter = "JSON files|*.json";
-            theDialog.InitialDirectory = @"C:\Desktop";
+            OpenFileDialog theDialog = new OpenFileDialog
+            {
+                Title = "Open JSON File",
+                Filter = "JSON files|*.json",
+                InitialDirectory = @"C:\Desktop"
+            };
             string jsonString = string.Empty;
 
 
@@ -193,7 +191,7 @@ namespace JFlapp
                         stateCounter = save[save.Count - 1].value + 1;
                         foreach (var item in save)
                         {
-                            drawState(item.value, item.X, item.Y);
+                            DrawState(item.value, item.X, item.Y);
 
                             foreach (var it in item.connections)
                             {
@@ -201,7 +199,7 @@ namespace JFlapp
                                 {
                                     if (iterator.value == it)
                                     {
-                                        drawLine(iterator.X, iterator.Y, item.X, item.Y);
+                                        DrawLine(iterator.X, iterator.Y, item.X, item.Y);
                                     }
                                 }
                             }
@@ -218,7 +216,7 @@ namespace JFlapp
 
         }
 
-        private void drawState(int actualState, double x, double y)
+        private void DrawState(int actualState, double x, double y)
         {
             Border circle = new Border()
             {
@@ -246,7 +244,7 @@ namespace JFlapp
             myCanvas.Children.Add(circle);
         }
 
-        private void drawLine(double x1, double y1, double x2, double y2)
+        private void DrawLine(double x1, double y1, double x2, double y2)
         {
             point2.X = x2 + 30;
             point2.Y = y2 + 30;
